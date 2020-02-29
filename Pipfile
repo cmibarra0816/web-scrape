@@ -1,0 +1,31 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+pandas = "*"
+numpy = "*"
+matplotlib = "*"
+ipykernel = "*"
+beautifulsoup4 = "*"
+requests = "*"
+selenium = "*"
+splinter = "*"
+tweepy = "*"
+json = "*"
+time = "*"
+jupyter = "*"
+sqlalchemy = "*"
+pymysql = "*"
+blackcellmagic = "*"
+flask = "*"
+flask-alchemy = "*"
+flask-pymongo = "*"
+nb-black = "*"
+lxml = "*"
+
+[requires]
+python_version = "3.7"
