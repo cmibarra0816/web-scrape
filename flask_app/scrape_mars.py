@@ -4,7 +4,7 @@
 import os
 #import requests
 import pandas as pd
-from bs4 import BeautifulSoup as bs
+from bs4 import BeautifulSoup
 from splinter import Browser
 import datetime as dt
 
@@ -22,18 +22,18 @@ browser=Browser("chrome", **executable_path, headless=False)
 #NASA Mars News Site web scraper
 def mars_news(browser):
 
-#Visit the NASA Mars News site
-url="https://mars.nasa.gov/news/"
-browser.visit(url)
+    #Visit the NASA Mars News site
+    url="https://mars.nasa.gov/news/"
+    browser.visit(url)
 
-#Scrape the latest news & wait for it... if not immediately present
-browser.is_element_present_by_css("ul.item_list li.slide", wait_time=0.10)
-    
-html=browser.html
-news_soup=BeautifulSoup(html, "html.parser")
+    #Scrape the latest news & wait for it... if not immediately present
+    browser.is_element_present_by_css("ul.item_list li.slide", wait_time=0.10)
+        
+    html=browser.html
+    news_soup=BeautifulSoup(html, "html.parser")
 
-#Parse results HTML with BeautifulSoup (bs)
-#Find everything inside:
+    #Parse results HTML with BeautifulSoup
+    #Find everything inside:
  
 #Visit the NASA JPL (Jet Propulsion Laboratory) site web scraper
 #executable_path={"executable_path": "/usr/local/bin/chromedriver"}
@@ -53,7 +53,7 @@ def featured_image(browser):
     more_info_element = browser.find_link_by_partial_text("more info")
     more_info_element.click()
 
-    #Parse results HTML with BeautifulSoup (bs)
+    #Parse results HTML with BeautifulSoup
     html = browser.html
     image_soup = BeautifulSoup(html, "html.parser")
 
@@ -74,9 +74,9 @@ def twitter_weather(browser):
     url = "https://twitter.com/marswxreport?lang=en"
     browser.visit(url)
     
-    #Parse results HTML with BeautifulSoup (bs)
+    #Parse results HTML with BeautifulSoup
     html=browser.html
-    weather_soup=bs(html, "html.parser")
+    weather_soup=BeautifulSoup(html, "html.parser")
     
     #Find a Tweet with the data-name `Mars Weather`
     latest_tweets = soup.find_all('div', class_="js-tweet-text-container")

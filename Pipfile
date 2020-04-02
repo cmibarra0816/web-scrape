@@ -4,6 +4,8 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+black = "*"
+blackcellalchemy = "*"
 
 [packages]
 pandas = "*"
@@ -14,17 +16,14 @@ beautifulsoup4 = "*"
 requests = "*"
 selenium = "*"
 splinter = "*"
-tweepy = "*"
-json = "*"
 time = "*"
 jupyter = "*"
 sqlalchemy = "*"
 pymysql = "*"
 blackcellmagic = "*"
 flask = "*"
-flask-alchemy = "*"
-flask-pymongo = "*"
-nb-black = "*"
+flask_sqlalchemy = "*"
+flask_pymongo = "*"
 lxml = "*"
 
 [requires]
